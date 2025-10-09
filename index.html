@@ -3,335 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abnurkan | NLP Research Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    :root {
-      --accent: #4b7bec;
-      --bg: #f9f9fb;
-      --text: #222;
-      --card-bg: #fff;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: var(--accent);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 2rem;
-        background: var(--card-bg);
-        box-shadow: var(--shadow);
-        border-radius: 10px;
-        padding: 1rem;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, #e3eeff, #ffffff);
-    }
-
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-      color: #555;
-    }
-
-    .btn {
-      background: var(--accent);
-      color: #fff;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #3a63c0;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h3 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-      color: var(--accent);
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-card {
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    /* CV-style Projects */
-    .project-entry {
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      border-left: 5px solid var(--accent);
-      border-radius: 8px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .project-entry h4 {
-      color: var(--accent);
-      margin-bottom: 0.3rem;
-    }
-
-    .project-meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-
-    .project-section {
-      margin-bottom: 0.6rem;
-    }
-
-    .project-section strong {
-      color: var(--accent);
-    }
-
-    @media (max-width: 600px) {
-      .project-entry {
-        padding: 1.2rem;
-      }
-    }
-
-    .pub-list li {
-      margin-bottom: 1rem;
-    }
-
-    .cv iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      box-shadow: var(--shadow);
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .social-icons i {
-      margin: 0.5rem;
-      font-size: 1.4rem;
-      transition: 0.3s;
-    }
-
-    .social-icons i:hover {
-      color: #2d5be3;
-    }
-  </style>
+  <title>Abdulaziz Nura Kani | AI & NLP Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-50 text-gray-900">
 
-<body>
-  <header>
-    <h1>Abnurkan</h1>
-    <div class="menu-toggle"><i class="fa fa-bars"></i></div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- HEADER / NAV -->
+  <header class="bg-white shadow fixed top-0 w-full z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">Abdulaziz Nura Kani</h1>
+      <nav class="space-x-6">
+        <a href="#home" class="text-gray-600 hover:text-blue-700">Home</a>
+        <a href="#projects" class="text-gray-600 hover:text-blue-700">Projects</a>
+        <a href="#cv" class="text-gray-600 hover:text-blue-700">CV</a>
+        <a href="#contact" class="text-gray-600 hover:text-blue-700">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <img src="IMG_20250925_080819.png" alt="Profile photo" />
-      <h2>Driven NLP Research Assistant</h2>
-      <p>Exploring the intersection of African languages and Natural Language Processing to create inclusive AI systems.</p>
-      <a class="btn" href="#cv">View CV</a>
+  <!-- HERO SECTION -->
+  <section id="home" class="pt-32 pb-16 bg-gradient-to-br from-blue-700 to-blue-900 text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">AI & NLP Research Enthusiast</h2>
+      <p class="text-blue-100 text-lg mb-8">
+        Exploring innovative applications of Artificial Intelligence and Natural Language Processing 
+        to empower low-resource languages and communities.
+      </p>
+      <a href="#projects" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition">
+        View Projects
+      </a>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <h3>About Me</h3>
-    <p>
-      I’m a passionate NLP researcher with a strong foundation in computer science and computational linguistics. My interests lie in low-resource language modeling, sentiment analysis, and AI for social good. I aim to contribute to global NLP advancements through open research and impactful collaborations.
-    </p>
-  </section>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-16 px-6 md:px-20 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900">Research & Projects</h2>
+      <p class="text-gray-600 mt-2">
+        Selected AI and NLP projects demonstrating societal impact.
+      </p>
+    </div>
 
-  <section id="skills">
-    <h3>Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-card"><h4>Technical</h4><p>Python, PyTorch, HuggingFace, FastText, Transformers, TensorFlow, Scikit-learn</p></div>
-      <div class="skill-card"><h4>Research</h4><p>Data collection, annotation, corpus building, model evaluation, statistical analysis</p></div>
-      <div class="skill-card"><h4>Soft Skills</h4><p>Critical thinking, communication, teamwork, project management</p></div>
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+      <!-- Project 1 -->
+      <div class="bg-gray-50 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Hausa Aspect-Based Sentiment Analysis</h3>
+          <p class="text-gray-600 mb-4">
+            Developed an aspect-based sentiment classifier for Hausa movie reviews using BERT.
+            Contributes to building emotional understanding in African languages and better local content moderation.
+          </p>
+          <a href="#" class="text-blue-700 font-medium hover:underline">View Details →</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-gray-50 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Hausa Language Dataset Curation</h3>
+          <p class="text-gray-600 mb-4">
+            Collected and cleaned text datasets for Hausa NLP tasks, creating a foundation for sentiment, 
+            translation, and text classification research. Supports inclusive AI for low-resource languages.
+          </p>
+          <a href="#" class="text-blue-700 font-medium hover:underline">View Details →</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-gray-50 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Computer Vision for Health Diagnosis</h3>
+          <p class="text-gray-600 mb-4">
+            Implemented CNN models for image-based health diagnostics on mobile devices.
+            This contributes to accessible healthcare technologies in under-resourced areas.
+          </p>
+          <a href="#" class="text-blue-700 font-medium hover:underline">View Details →</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="bg-gray-50 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Multilingual Transfer Learning</h3>
+          <p class="text-gray-600 mb-4">
+            Explored cross-lingual transfer between English and Hausa using AfriBERTa and mBERT.
+            This project improves generalization of language models for African NLP.
+          </p>
+          <a href="#" class="text-blue-700 font-medium hover:underline">View Details →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="projects">
-    <h3>Research & Projects</h3>
+  <!-- CV SECTION (Modern Layout) -->
+  <section id="cv" class="bg-gray-50 py-16 px-6 md:px-20">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Curriculum Vitae</h2>
 
-    <div class="project-entry">
-      <h4>Hausa Sentiment Classification using Deep Learning</h4>
-      <p class="project-meta">Role: Lead Research Assistant | Tools: BiLSTM, FastText | Year: 2024</p>
-      <div class="project-section"><strong>Objective:</strong> Build a Hausa-language sentiment analysis model to evaluate public opinion from social media.</div>
-      <div class="project-section"><strong>Methodology:</strong> Collected and annotated 10K movie reviews; applied text cleaning, tokenization, and BiLSTM with FastText embeddings.</div>
-      <div class="project-section"><strong>Outcome:</strong> Achieved 85% accuracy, outperforming logistic baseline models.</div>
-      <div class="project-section"><strong>Societal Impact:</strong> Supports digital media literacy and helps organizations understand local sentiment trends for development communication.</div>
-    </div>
+      <div class="grid md:grid-cols-3 gap-10 bg-white rounded-2xl shadow-lg overflow-hidden">
+        <!-- LEFT PANEL -->
+        <div class="bg-gradient-to-b from-blue-700 to-blue-900 text-white p-8 md:col-span-1">
+          <h3 class="text-2xl font-bold mb-2">Abdulaziz Nura Kani</h3>
+          <p class="text-blue-100 mb-6">AI & NLP Researcher</p>
 
-    <div class="project-entry">
-      <h4>Low-Resource Neural Machine Translation (Hausa ↔ English)</h4>
-      <p class="project-meta">Role: Model Developer | Tools: Transformer, Masakhane Corpus | Year: 2023</p>
-      <div class="project-section"><strong>Objective:</strong> Improve translation accuracy for underrepresented African languages using transfer learning.</div>
-      <div class="project-section"><strong>Methodology:</strong> Fine-tuned a Transformer-based NMT model on parallel Hausa-English datasets using Masakhane pipeline.</div>
-      <div class="project-section"><strong>Outcome:</strong> BLEU score improvement of +5 points compared to baseline.</div>
-      <div class="project-section"><strong>Societal Impact:</strong> Enhances access to educational and health information for Hausa-speaking communities.</div>
-    </div>
+          <div class="border-t border-blue-500 pt-4 space-y-3 text-blue-100 text-sm">
+            <p><strong>Email:</strong><br> abdulaziz.kani@email.com</p>
+            <p><strong>Location:</strong><br> Nigeria</p>
+            <p><strong>Languages:</strong><br> English, Hausa</p>
+          </div>
 
-    <div class="project-entry">
-      <h4>Bias and Fairness in African NLP Models</h4>
-      <p class="project-meta">Role: Research Contributor | Tools: XLM-R, Sentiment Datasets | Year: 2024</p>
-      <div class="project-section"><strong>Objective:</strong> Identify and mitigate gender, regional, and occupational bias in African NLP models.</div>
-      <div class="project-section"><strong>Methodology:</strong> Conducted comparative bias evaluations using token attribution and fairness metrics.</div>
-      <div class="project-section"><strong>Outcome:</strong> Proposed bias mitigation recommendations for low-resource settings.</div>
-      <div class="project-section"><strong>Societal Impact:</strong> Encourages ethical AI practices and equitable language technology deployment.</div>
+          <div class="mt-8">
+            <a href="ABDULAZIZ_NURA_KANI_Upwork_CV.pdf" 
+              download 
+              class="block text-center bg-white text-blue-900 font-semibold py-3 px-6 rounded-full hover:bg-blue-100 transition">
+              📄 Download CV (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="p-8 md:col-span-2 space-y-10">
+          <!-- Summary -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Professional Summary</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Passionate AI and NLP researcher focusing on developing language technologies for African languages.
+              Skilled in model fine-tuning, data curation, and transfer learning. 
+              Dedicated to applying AI for social good in education, healthcare, and environmental research.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Education</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>MSc. Artificial Intelligence (in progress)</strong> – [University Name]</li>
+              <li><strong>BSc. Computer Science</strong> – [University Name], Nigeria</li>
+            </ul>
+          </div>
+
+          <!-- Skills -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Technical Skills</h4>
+            <div class="grid md:grid-cols-2 gap-x-6 text-gray-700">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Natural Language Processing (NLP)</li>
+                <li>Computer Vision</li>
+                <li>Deep Learning (PyTorch, TensorFlow)</li>
+              </ul>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Data Preprocessing & Annotation</li>
+                <li>Machine Translation</li>
+                <li>Transformers & BERT Models</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Experience</h4>
+            <div class="space-y-4 text-gray-700">
+              <div>
+                <p class="font-semibold">Research Assistant – NLP Projects (Remote)</p>
+                <p>
+                  Worked on Hausa sentiment analysis and aspect-based sentiment classification using BERT-based models.
+                </p>
+              </div>
+              <div>
+                <p class="font-semibold">AI Intern – Computer Vision (Self-directed)</p>
+                <p>
+                  Implemented CNN-based image classifiers for diagnostic applications using small datasets and transfer learning.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects / Publications -->
+          <div>
+            <h4 class="text-xl font-semibold text-gray-800 mb-2">Publications & Projects</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Developed Hausa NLP datasets for low-resource tasks.</li>
+              <li>Aspect-Based Sentiment Analysis of Hausa Movie Reviews.</li>
+              <li>Vision-based Health Diagnosis using CNN and Edge Devices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="publications">
-    <h3>Publications</h3>
-    <ul class="pub-list">
-      <li><strong>“BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.”</strong> Devlin et al., NAACL 2019.</li>
-      <li><strong>“Masakhane: Building African NLP Together.”</strong> Orife et al., ACL 2020.</li>
-      <li><strong>“Cross-lingual Transfer in Low-Resource Languages.”</strong> Conneau et al., EMNLP 2020.</li>
-    </ul>
+  <!-- CONTACT -->
+  <section id="contact" class="py-12 bg-white text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+    <p class="text-gray-600 mb-6">Let’s collaborate on AI research or innovative NLP projects.</p>
+    <a href="mailto:abdulaziz.kani@email.com"
+       class="bg-blue-700 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-800 transition">
+       📧 Send Email
+    </a>
   </section>
 
-  <section id="cv" class="cv">
-    <h3>Curriculum Vitae</h3>
-    <iframe src="ABDULAZIZ NURA KANI upwork CV .pdf"></iframe>
-    <p style="text-align:center; margin-top:1rem;">
-      <a class="btn" href="ABDULAZIZ NURA KANI upwork CV .pdf" download>Download CV</a>
-    </p>
-  </section>
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-gray-500 text-sm bg-gray-100">
+    © 2025 Abdulaziz Nura Kani — All Rights Reserved
+  </footer>
 
-  <section id="contact" class="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:abnurkan@example.com">abnurkan@example.com</a></p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-google-scholar"></i></a>
-    </div>
-  </section>
-
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('nav ul');
-    toggle.addEventListener('click', () => menu.classList.toggle('active'));
-  </script>
 </body>
 </html>
