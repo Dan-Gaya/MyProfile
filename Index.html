@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abnurkan Musa — NLP Research Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2f5bea;
+      --accent: #ff7b54;
+      --bg-light: #f9f9ff;
+      --bg-dark: #0e1117;
+      --text-light: #ffffff;
+      --text-dark: #1c1c1c;
+      --card-radius: 18px;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg-light);color:var(--text-dark);transition:background .3s,color .3s}
+    header{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;position:fixed;width:100%;top:0;z-index:1000;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);box-shadow:0 6px 18px rgba(20,20,50,0.04)}
+    header.dark{background:rgba(6,8,12,0.75)}
+    .logo{font-weight:700;color:var(--primary);font-size:1.25rem}
+    nav a{margin:0 0.8rem;text-decoration:none;color:inherit;font-weight:500}
+    .btn{padding:.5rem 1rem;border-radius:999px;border:2px solid var(--primary);text-decoration:none;color:var(--primary);font-weight:600}
+    .btn:hover{background:var(--primary);color:#fff}.hero{display:flex;align-items:center;justify-content:space-between;padding:8rem 8%;min-height:85vh;background:linear-gradient(120deg,#e9efff 0%, #ffffff 100%);position:relative;overflow:visible}
+.hero.dark{background:linear-gradient(120deg,#0b0f16 0%, #12161b 100%)}
+.hero-text{max-width:640px;z-index:4}
+.hero-text h3{margin:.2rem 0;color:#333;font-weight:500}
+.hero-text h1{font-size:3.2rem;margin:.2rem 0;color:var(--primary)}
+.hero-text h2{font-size:1.1rem;color:#444;font-weight:500}
+.hero-text p{color:#556;padding-top:1rem;line-height:1.6}
+
+.hero-cta{margin-top:1.6rem;display:flex;gap:.8rem}
+.profile-wrap{position:relative;width:360px;height:360px;display:flex;align-items:center;justify-content:center}
+.color-splash{position:absolute;inset:auto auto -40px -40px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(47,91,234,0.15) 0%, transparent 60%),radial-gradient(circle at 70% 70%, rgba(255,123,84,0.08) 0%, transparent 60%);filter:blur(30px);}
+.profile-photo{width:280px;height:280px;border-radius:50%;object-fit:cover;border:10px solid white;box-shadow:0 20px 50px rgba(20,30,70,0.12);position:relative}
+
+section{padding:4rem 8%;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;font-size:2rem;margin-bottom:1.2rem}
+
+.about .card{background:white;border-radius:var(--card-radius);padding:1.6rem;box-shadow:0 12px 40px rgba(14,20,30,0.06)}
+
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.card-research{background:white;padding:1rem;border-radius:14px;box-shadow:0 8px 30px rgba(12,20,35,0.06)}
+.muted{color:#6b7280}
+
+.pub-list{display:flex;flex-direction:column;gap:.8rem}
+.pub-item{background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);padding:12px;border-radius:12px;border:1px solid rgba(12,20,40,0.04)}
+.pub-item a{color:var(--primary);font-weight:600}
+
+.projects .project{background:white;padding:1.1rem;border-radius:14px;box-shadow:0 8px 30px rgba(12,20,35,0.06)}
+.project .meta{font-size:.9rem;color:var(--muted);margin-bottom:.6rem}
+.impact{background:linear-gradient(90deg,#f7fbff,#fff7f5);padding:.6rem;border-radius:10px;margin-top:.8rem;font-size:.95rem}
+
+.cv-embed{width:100%;height:720px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);overflow:hidden}
+
+footer{padding:2rem 8%;text-align:center;color:#6b7280}
+
+@media(max-width:900px){.hero{padding:6rem 6%;flex-direction:column;text-align:center}.profile-wrap{margin-top:2rem}.profile-photo{width:220px;height:220px;border-width:8px}}
+
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">Abnurkan Musa</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.6rem">
+      <button id="themeToggle" class="btn">Dark</button>
+      <a class="btn" href="assets/Abnurkan_CV.pdf" target="_blank" download>Download CV</a>
+    </div>
+  </header>  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h3>Hello, I'm</h3>
+        <h1>Abnurkan Musa</h1>
+        <h2>Aspiring NLP Research Assistant • Low-resource Languages & Ethical AI</h2>
+        <p>I develop practical NLP tools for African languages, focusing on reproducibility, evaluation, and social impact. My work spans dataset curation, model development, and community-centered evaluation.</p>
+        <div class="hero-cta">
+          <a href="#cv" class="btn">View CV</a>
+          <a href="#projects" class="btn" style="border-color:var(--accent);color:var(--accent)">Projects</a>
+        </div>
+      </div><div class="profile-wrap">
+    <div class="color-splash"></div>
+    <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo" />
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <div class="card">
+      <p class="muted">I am a computer science graduate and an aspiring NLP researcher with hands-on experience in multilingual modeling, dataset curation, and model evaluation. I focus on problems that improve access to language technology in low-resource settings and help communities benefit from AI systems.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projects & Societal Impact</h2>
+  <div class="grid-3">
+
+    <div class="card-research project">
+      <h3>Hausa Sentiment Classifier</h3>
+      <div class="meta">Role: Lead • Tools: Hugging Face, FastText, PyTorch</div>
+      <p>Built and evaluated a sentiment classifier for Hausa movie and product reviews, addressing class imbalance using targeted augmentation and careful annotation guidelines.</p>
+      <div class="impact"><strong>Societal Impact:</strong> Enables better sentiment insights for local businesses and researchers, helping content moderation and customer feedback analysis in Hausa-speaking communities.</div>
+      <div style="margin-top:.8rem"><a href="#" class="muted">GitHub</a></div>
+    </div>
+
+    <div class="card-research project">
+      <h3>Aspect-Based Sentiment Analysis (ABSA)</h3>
+      <div class="meta">Role: Model Developer • Tools: BiLSTM, Attention, FastText</div>
+      <p>Designed an ABSA pipeline to extract sentiment toward specific product or service aspects within reviews, combining neural attention mechanisms with rule-based heuristics.</p>
+      <div class="impact"><strong>Societal Impact:</strong> Helps small businesses and NGOs understand specific pain points in services (e.g., delivery, pricing, quality) and target improvements in local markets.</div>
+      <div style="margin-top:.8rem"><a href="#" class="muted">Paper / Repo</a></div>
+    </div>
+
+    <div class="card-research project">
+      <h3>Low-Resource Text Cleaning & Toolkit</h3>
+      <div class="meta">Role: Data Engineer • Tools: Python, Pandas</div>
+      <p>Created an open-source toolkit for cleaning and tokenizing texts in African languages, including normalization rules, stopword lists, and script handling.</p>
+      <div class="impact"><strong>Societal Impact:</strong> Lowers the barrier for researchers and practitioners to build language tools for underrepresented languages, fostering local research and technology access.</div>
+      <div style="margin-top:.8rem"><a href="#" class="muted">Toolkit</a></div>
+    </div>
+
+    <div class="card-research project">
+      <h3>Reproducible NLP Pipelines with Docker</h3>
+      <div class="meta">Role: Pipeline Engineer • Tools: Docker, GitHub Actions</div>
+      <p>Packaged experiments and training scripts into Docker containers and integrated CI to ensure reproducible results across collaborators and cloud/edge setups.</p>
+      <div class="impact"><strong>Societal Impact:</strong> Promotes transparency and reproducibility in research, which increases trust in model claims and helps collaborators in low-infrastructure settings reproduce experiments reliably.</div>
+      <div style="margin-top:.8rem"><a href="#" class="muted">Repo</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="publications">
+  <h2 class="section-title">Selected Publications & Presentations</h2>
+  <div class="pub-list">
+
+    <div class="pub-item">
+      <div><strong>Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.</strong></div>
+      <div class="muted">ACL/NAACL, 2019 — <a href="https://arxiv.org/abs/1810.04805" target="_blank">arXiv:1810.04805</a></div>
+      <div class="muted">Summary: Introduced bidirectional transformer pre-training, a method that significantly improved many NLP benchmarks and inspired transfer learning in NLP.</div>
+    </div>
+
+    <div class="pub-item">
+      <div><strong>Vaswani, A., Shazeer, N., Parmar, N., et al. — Attention Is All You Need.</strong></div>
+      <div class="muted">NeurIPS, 2017 — <a href="https://arxiv.org/abs/1706.03762" target="_blank">arXiv:1706.03762</a></div>
+      <div class="muted">Summary: Proposed the Transformer architecture, replacing recurrent networks with self-attention mechanisms, enabling better scaling and parallelism.</div>
+    </div>
+
+    <div class="pub-item">
+      <div><strong>Conneau, A., Khandelwal, K., Goyal, N., et al. — Unsupervised Cross-lingual Representation Learning at Scale (XLM-R).</strong></div>
+      <div class="muted">ACL, 2020 — <a href="https://arxiv.org/abs/1911.02116" target="_blank">arXiv:1911.02116</a></div>
+      <div class="muted">Summary: Demonstrated large-scale multilingual pretraining effectiveness, improving transfer to many languages including low-resource ones.</div>
+    </div>
+
+    <div class="pub-item">
+      <div><strong>Masakhane Community — Collaborative Research in African Language Machine Translation.</strong></div>
+      <div class="muted">Workshop & community outputs, ongoing — <a href="https://masakhane.io" target="_blank">masakhane.io</a></div>
+      <div class="muted">Summary: Community-driven efforts to build datasets and models for African languages; a key example of collaborative, community-centered NLP research.</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="cv">
+  <h2 class="section-title">Curriculum Vitae</h2>
+  <p style="text-align:center;color:var(--muted);margin-bottom:1rem">Below is an embedded copy of the CV. You can also download it directly.</p>
+  <div style="max-width:1000px;margin:0 auto" class="card-research">
+    <iframe class="cv-embed" src="assets/Abnurkan_CV.pdf" title="Abnurkan CV"></iframe>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p style="text-align:center;color:var(--muted)">I'm open to research collaborations, dataset sharing, and PhD opportunities. Please include a short message about the project when you reach out.</p>
+  <p style="text-align:center;margin-top:1rem"><a href="mailto:abnurkan.research@gmail.com" style="color:var(--primary);font-weight:700">abnurkan.research@gmail.com</a></p>
+  <p style="text-align:center;margin-top:0.6rem"><a href="https://github.com/abnurkan" target="_blank">github.com/abnurkan</a> • <a href="https://www.linkedin.com/in/abnurkan" target="_blank">linkedin.com/in/abnurkan</a></p>
+</section>
+
+  </main>  <footer>
+    © <span id="year"></span> Abnurkan Musa — Research and reproducibility for inclusive NLP.
+  </footer>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', ()=>{
+      const header = document.getElementById('header');
+      const hero = document.querySelector('.hero');
+      document.body.classList.toggle('dark');
+      header.classList.toggle('dark');
+      hero.classList.toggle('dark');
+      const dark = document.body.classList.contains('dark');
+      toggle.textContent = dark ? 'Light' : 'Dark';
+      document.body.style.background = dark ? 'var(--bg-dark)' : 'var(--bg-light)';
+      document.body.style.color = dark ? 'var(--text-light)' : 'var(--text-dark)';
+    });
+
+    // Scroll reveal for .card elements
+    const revealEls = document.querySelectorAll('.card-research, .pub-item, section');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.style.opacity=1; entry.target.style.transform='none'; observer.unobserve(entry.target); }
+      });
+    },{threshold:0.12});
+    revealEls.forEach(el=>{ el.style.opacity=0; el.style.transform='translateY(30px)'; observer.observe(el); });
+  </script></body>
+</html>
